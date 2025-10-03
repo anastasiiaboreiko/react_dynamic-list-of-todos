@@ -1,10 +1,11 @@
 import React from 'react';
 import { Loader } from '../Loader';
 import { ExtendedTodo } from '../../types/ExtendedTodo';
+import { Todo } from '../../types/Todo';
 
 type Props = {
   todo: ExtendedTodo | null;
-  onClose: (value: null) => void;
+  onClose: (value: Todo | null) => void;
 };
 
 export const TodoModal: React.FC<Props> = ({ todo, onClose }) => {
@@ -47,7 +48,7 @@ export const TodoModal: React.FC<Props> = ({ todo, onClose }) => {
 
               {' by '}
 
-              <a href="mailto:Sincere@april.biz">{todo?.user.name}</a>
+              <a href={`mailto:${todo?.user.email}`}>{todo?.user.name}</a>
             </p>
           </div>
         </div>
