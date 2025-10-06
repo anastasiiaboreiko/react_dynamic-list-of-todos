@@ -49,6 +49,7 @@ export const App: React.FC = () => {
       }
 
       try {
+        setExtendedTodo(null);
         const user = await getUser(selectedTodo.userId);
 
         if (!ignore) {
